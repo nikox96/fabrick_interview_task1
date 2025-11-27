@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
                 .timestamp(LocalDateTime.now())
                 .status(Status.ERROR)
                 .errorCode(ApplicationError.VALIDATION_ERROR.getErrorCode())
-                .message(ApplicationError.VALIDATION_ERROR.getMessage())
+                .message(ex.getMessage())
                 .path(request.getDescription(false).replace("uri=", ""))
                 .build();
 
