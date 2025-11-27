@@ -27,4 +27,4 @@ logging:
     org.springframework.cache: TRACE
     com.github.benmanes.caffeine: INFO
   pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} | %-5level | %logger{1.} | %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} | %-5level | %X{correlationId:-N/A} | %logger{1.} | %msg%n"

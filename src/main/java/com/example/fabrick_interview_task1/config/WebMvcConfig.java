@@ -1,0 +1,20 @@
+package com.example.fabrick_interview_task1.config;
+
+import com.example.fabrick_interview_task1.interceptor.CorrelationIdInterceptor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@RequiredArgsConstructor
+public class WebMvcConfig implements WebMvcConfigurer {
+
+    private final CorrelationIdInterceptor correlationIdInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(correlationIdInterceptor)
+                .addPathPatterns("/**");
+    }
+}
