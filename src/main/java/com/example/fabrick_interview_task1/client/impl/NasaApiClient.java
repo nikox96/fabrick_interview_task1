@@ -27,7 +27,7 @@ public class NasaApiClient implements com.example.fabrick_interview_task1.client
     public NasaAsteroidResponse getAsteroidData(int asteroidId) {
         log.info("Retrieving asteroid data from NASA API for asteroidId: {}", asteroidId);
 
-        String url = UriComponentsBuilder.fromUriString(nasaApiProperties.getBaseUrl()).path(ASTEROID_ID_PLACE_HOLDER)
+        String url = UriComponentsBuilder.fromUriString(nasaApiProperties.getBaseUrl()).pathSegment(ASTEROID_ID_PLACE_HOLDER)
                 .queryParam("api_key", nasaApiProperties.getApiKey())
                 .buildAndExpand(asteroidId)
                 .toUriString();
